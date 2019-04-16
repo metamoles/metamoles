@@ -1,0 +1,127 @@
+# Copyright © 1996-2007 SRI International, Marine Biological Laboratory, DoubleTwist Inc., The Institute for Genomic Research, J. Craig Venter Institute, University of California at San Diego, and UNAM.  All Rights Reserved.
+#
+#
+# Please see the license agreement regarding the use of and distribution of this file.
+# The format of this file is defined at http://bioinformatics.ai.sri.com/ptools/flatfile-format.html .
+#
+# Species: E. coli K-12
+# Database: EcoCyc
+# Version: 11.5
+# File Name: enzrxns.dat
+# Date and time generated: August 6, 2007, 17:31:13
+#
+# Attributes:
+#    UNIQUE-ID
+#    TYPES
+#    COMMON-NAME
+#    ACTIVATORS-ALLOSTERIC
+#    ACTIVATORS-NONALLOSTERIC
+#    ACTIVATORS-UNKMECH
+#    ALTERNATIVE-COFACTORS
+#    ALTERNATIVE-SUBSTRATES
+#    BASIS-FOR-ASSIGNMENT
+#    CITATIONS
+#    COFACTOR-BINDING-COMMENT
+#    COFACTORS
+#    COFACTORS-OR-PROSTHETIC-GROUPS
+#    COMMENT
+#    CREDITS
+#    DATA-SOURCE
+#    DBLINKS
+#    ENZYME
+#    INHIBITORS-ALLOSTERIC
+#    INHIBITORS-COMPETITIVE
+#    INHIBITORS-IRREVERSIBLE
+#    INHIBITORS-NONCOMPETITIVE
+#    INHIBITORS-OTHER
+#    INHIBITORS-UNCOMPETITIVE
+#    INHIBITORS-UNKMECH
+#    INSTANCE-NAME-TEMPLATE
+#    KM
+#    PH-OPT
+#    PHYSIOLOGICALLY-RELEVANT
+#    PROSTHETIC-GROUPS
+#    REACTION
+#    REACTION-DIRECTION
+#    REGULATED-BY
+#    REQUIRED-PROTEIN-COMPLEX
+#    SYNONYMS
+#    TEMPERATURE-OPT
+#
+UNIQUE-ID - XYLULOKIN-ENZRXN
+TYPES - Enzymatic-Reactions
+COMMON-NAME - xylulokinase
+CITATIONS - 17123542:EV-EXP-IDA-PURIFIED-PROTEIN:3377353002:keseler
+CITATIONS - 14597191:EV-EXP-IDA-PURIFIED-PROTEIN:3377360280:keseler
+COMMENT - D-xylulose is strongly preferred over alternative substrates; the catalytic efficiency with substrates such as
+/D-ribulose and D-arabitol is 50- to 1300-fold lower |CITS: [17123542]|.
+ENZYME - CPLX0-7466
+KM - (D-XYLULOSE 290)
+REACTION - XYLULOKIN-RXN
+REACTION-DIRECTION - PHYSIOL-LEFT-TO-RIGHT
+REGULATED-BY - REG0-7094
+REGULATED-BY - REG0-7093
+SYNONYMS - xylulose kinase
+//
+UNIQUE-ID - XYLISOM-ENZRXN
+TYPES - Enzymatic-Reactions
+COMMON-NAME - xylose isomerase
+ALTERNATIVE-SUBSTRATES - (XYLOSE GLC)
+CITATIONS - 6344793:EV-EXP-IDA-UNPURIFIED-PROTEIN:3377366762:keseler
+CITATIONS - 6327696:EV-EXP-IDA-PART-PURIFIED-PROTEIN:3377366762:keseler
+CITATIONS - 2405386:EV-EXP-IDA-PART-PURIFIED-PROTEIN:3377366762:keseler
+COFACTORS - MN+2
+COMMENT - The enzyme is also able to convert D-glucose to D-fructose under certain non-physiological conditions; the
+/K<sub>M</sub> for glucose is 0.5 M |CITS: [6344793]|.
+ENZYME - XYLISOM-CPLX
+KM - (XYLOSE 10000)
+REACTION - XYLISOM-RXN
+REACTION-DIRECTION - REVERSIBLE
+SYNONYMS - D-xylose ketol-isomerase
+//
+UNIQUE-ID - XANTHOSINEPHOSPHORY-ENZRXN
+TYPES - Enzymatic-Reactions
+COMMON-NAME - xanthosine phosphorylase
+CITATIONS - :EV-EXP:3277835751:pkarp
+COMMENT - There are two purine nucleoside phosphorylases in E. coli.
+/The enzyme coded for by the deoD gene has broader substrate
+/specificity but cannot act on xanthosine while the one coded for by
+/the xapA gene is induced by xanthosine,and cannot act on adenine or
+/the corresponding nucleosides.  |CITS: [81122109]| The second
+/phosphorylase, xanthosine phosphorylase, has been assigned the same
+/E.C. number as the enzyme coded for by the deoD gene by some
+/researchers |CITS: [88107903]|. However as xanthosine phosphorylase
+/acts only on xanthosine the use of the broad substrate E.C. number may
+/not be correct.
+ENZYME - XANTHOSINEPHOSPHORY-CPLX
+REACTION - XANTHOSINEPHOSPHORY-RXN
+REACTION-DIRECTION - REVERSIBLE
+REGULATED-BY - REG0-7312
+REGULATED-BY - REG0-7311
+REGULATED-BY - REG0-7310
+REGULATED-BY - REG0-7309
+SYNONYMS - purine nucleoside phosphorylase
+//
+UNIQUE-ID - XANPRIBOSYLTRAN-ENZRXN
+TYPES - Enzymatic-Reactions
+COMMON-NAME - xanthine phosphoribosyltransferase
+ALTERNATIVE-SUBSTRATES - (XANTHINE HYPOXANTHINE)
+ALTERNATIVE-SUBSTRATES - (XANTHINE GUANINE)
+ALTERNATIVE-SUBSTRATES - (XANTHINE GUANINE HYPOXANTHINE)
+CITATIONS - :EV-EXP:3277835750:pkarp
+COMMENT - Xanthine-guanine phosphoribosyltransferase is a purine
+/salvage enzyme which converts either xanthine or guanine to XMP or GMP
+/respectively.  There is evidence that is can also weakly act on
+/hypoxanthine, although guanine appears to be the preferred substrate.
+/|CITS: [83238313] [84169518]|
+ENZYME - GPT-CPLX
+REACTION - XANPRIBOSYLTRAN-RXN
+REACTION-DIRECTION - REVERSIBLE
+REGULATED-BY - REG0-7899
+REGULATED-BY - REG0-7898
+REGULATED-BY - REG0-7897
+SYNONYMS - XGPRT
+SYNONYMS - xanthine phosphoribosyltransferase
+SYNONYMS - 5-phospho-&alpha;-D-ribose-1-diphosphate:xanthine phospho-D-ribosyltransferase
+SYNONYMS - guanine phosphoribosyltransferase
+//
