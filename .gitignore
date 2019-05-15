@@ -3,3 +3,6 @@ blasks_scratchspace/
 *.ipynb_checkpoints
 **/__pycache__
 **/deprecated_data
+**/deprecated
+*.pyc
+*~
