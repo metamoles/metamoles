@@ -40,13 +40,14 @@ install:
  - conda install -q scikit-learn numpy scipy pandas jupyter matplotlib seaborn biopython
 # install pubchempy through conda
  - conda install -c mcs07 pubchempy
-
 #  install the most recent rdkit package from the RDKit anaconda channel.
  - conda install -q -c rdkit rdkit
 # install nose for nosetests in this venv
  - conda install nose
 # - intall metamoles.py by setup.py
 # - python setup.py install
+# install cirpy
+ - pip install cirpy
  - pip install pytest
  - pip install pytest-cov
  - pip install coveralls
@@ -54,7 +55,6 @@ install:
 branches:
     only:
     - master
-    - travis-1
 
 script:
  - nosetests
