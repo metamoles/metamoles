@@ -55,6 +55,7 @@ install:
 branches:
     only:
     - master
+    - packages
 
 script:
  - nosetests
