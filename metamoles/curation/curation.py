@@ -1,3 +1,76 @@
+import pandas as pd
+import pubchempy as pc
+import gzip
+import Bio
+from Bio.KEGG import Compound
+from Bio.KEGG import REST
+from Bio.KEGG import Enzyme
+
+import re
+import scipy as sp
+import pandas as pd
+import numpy as np
+
+#temp start here
+
+def create_kegg_df(file_path: str, kegg_db: str):
+    """
+    create_kegg_df() parses a gzipped text file of KEGG records using the
+        Biopython.Bio.KEGG package, and returns the data as a pandas dataframe.
+
+        NOTE: only 'enzyme' and 'compound' KEGG records are supported
+
+    Args:
+        file_path (str): filepath string pointing to gzipped text file
+            of KEGG records
+        kegg_db (str): either 'enzyme' or 'compound' keyword argument
+
+    Returns:
+        pandas.DataFrame: containing all Enzyme.Record() fields in columns
+    """
+    supported_dbs = ['enzyme', 'compound']
+
+    if kegg_db == 'enzyme':
+        parser = Enzyme
+    elif kegg_db == 'compound':
+        parser = Compound
+    else:
+        raise ValueError('supported kegg_db values include: {}'.format(supported_dbs))
+
+    field_list = [method for method in dir(parser.Record()) if not method.startswith('_')]
+    data_matrix = []
+
+    with gzip.open(file_path, 'rt') as file:
+        for record in parser.parse(file):
+            data_matrix.append([getattr(record, field) for field in field_list])
+
+    kegg_df = pd.DataFrame(data_matrix, columns=field_list)
+    return kegg_df
+
+def parse_compound_ids(field: str):
+    """
+    parse_compound_ids() uses regular expressions to extract the KEGG compound
+        IDs from a product or substrate field in a KEGG record field
+
+    Args:
+        field (str): name of field that contains KEGG compound IDs in a string
+
+    Returns:
+        list: contains parsed KEGG compound IDs
+    """
+
+    cpd_list = []
+    regex = 'CPD:(C\d+)'
+    # matches 'CPD:' chars exactly and captures 'C' + any following digits (\d+)
+    for entry in field:
+        ids = re.findall(regex, str(entry), re.IGNORECASE)
+        for i in ids:
+            cpd_list.append(i)
+
+    return cpd_list
+
+#temp stop here
+
 def explode_dataframe(dataframe: pd.DataFrame, explosion_function,
                         explosion_target_field: str, fields_to_include: list):
     """
@@ -237,14 +310,3 @@ def kegg_df_to_smiles(kegg_df, column_name):
     # kegg_df.to_csv(r'../datasets/df_cleaned_kegg_with_smiles.csv')
 
     return kegg_df, unsuccessful_list
-
-def input_data(input_df): #cleans input df and returns neccessary elements
-    """From the input dataframe, removes rows that do not contain product
-    SMILES strings. Returns the cleaned dataframe"""
-    for index, row in input_df.iterrows():
-
-        if row['SMILES'] == 'none':
-
-            input_df.drop(index, inplace=True)
-
-    return input_df
