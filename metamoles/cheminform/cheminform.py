@@ -1,7 +1,9 @@
 import pandas as pd
 from rdkit import Chem
 from rdkit.Chem import AllChem
-
+from rdkit.Chem.Fingerprints import FingerprintMols
+from rdkit.Chem.Descriptors import MolWt
+from rdkit import DataStructs
 
 def input_data(input_df): #cleans input df and returns neccessary elements
     """From the input dataframe, removes rows that do not contain product
