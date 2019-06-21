@@ -1,4 +1,19 @@
-import
+import pandas as pd
+from rdkit import Chem
+from rdkit.Chem import AllChem
+
+
+def input_data(input_df): #cleans input df and returns neccessary elements
+    """From the input dataframe, removes rows that do not contain product
+    SMILES strings. Returns the cleaned dataframe"""
+    for index, row in input_df.iterrows():
+
+        if row['SMILES'] == 'none':
+
+            input_df.drop(index, inplace=True)
+
+    return input_df
+
 
 def fingerprint_products(input_df): #fingerprints all products in a given df
     """From the input dataframe, makes a list of rdkit Mol objects and makes a
