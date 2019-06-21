@@ -1,10 +1,15 @@
+import pandas as pd
+import pubchempy as pc
 import gzip
-import re
+import Bio
 from Bio.KEGG import Compound
 from Bio.KEGG import REST
 from Bio.KEGG import Enzyme
+
+import re
+import scipy as sp
 import pandas as pd
-import pubchempy as pc
+import numpy as np
 
 def create_kegg_df(file_path: str, kegg_db: str):
     """

@@ -1,3 +1,20 @@
+import pandas as pd
+import pubchempy as pc
+import gzip
+import Bio
+from Bio.KEGG import Compound
+from Bio.KEGG import REST
+from Bio.KEGG import Enzyme
+
+import re
+import scipy as sp
+import pandas as pd
+import numpy as np
+
+import sklearn
+from sklearn import linear_model
+from sklearn.model_selection import train_test_split
+
 def pair_query_compound(master_df, enzyme_col, pubchem_col, smiles_col, pubchem_sid):
     """
     pair_query_compound_with_enzymes() queries pubchem to get a SMILES string from an input pubchem_sid,
