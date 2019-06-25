@@ -36,6 +36,12 @@ See our poster for the quarter summary [here](https://github.com/theicechol/meta
 - numpy
 __________
 
+## Current release
+ - to be updated
+ 
+## Major finding
+ - to be updated
+
 ## Graphical Explanation of our Goal
 ![Expected_Output](https://github.com/theicechol/metamoles/blob/master/figures/Expected_RetroSynthesis_Output.png)
 
